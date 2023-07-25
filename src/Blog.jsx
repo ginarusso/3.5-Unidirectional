@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import BlogPost from './BlogPost'
+// import UserInput from './UserInput'
 
 const Blog = () => {
-    // 2) Create a list of posts using useState, call listOfPosts
     
     let [listOfPosts, setListOfPosts] = useState([])
-// 10) Create a function to add a new post to the listOfPosts
 
     function addToList(newPost){  // create a function to take the blog posts created from BlogPost.jsx and add them to the list of blog posts to the Blog component - send down the function to BlogPost.jsx - takes this info and adds the new blog post to listOfPosts -  sets the list of posts and creates a new post and puts it into the list of posts
         setListOfPosts(previousPosts => {
@@ -27,13 +26,8 @@ const Blog = () => {
     Optional TODO: Add dates to the posts
     */}
 
-    {/* //addToList is the callback function - sending addToList down and add a newPost to it, then update the setListOfPosts */}
-{/* 5) Bring in the BlogPost component. This is where the posts will get created and where the input form is. It initially looked like this: <BlogPost />  NEXT GO TO BLOGPOST */}
-   {/* 11) Pass the callback function called addToList from this Blog component down to the BlogPost component  - GO TO BlogPost.jsx */}
    {/* <UserInput /> */}
     <BlogPost addToList={addToList}/>  
-   
-{/* 3) Create a map to loop through all of the posts in the listOfPosts */}
 
     {listOfPosts.map(post =>{
         return (
