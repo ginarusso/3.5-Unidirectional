@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import UserInput from './UserInput';
+import React from 'react';
+// import UserInput from './UserInput';
 
-const BlogPost = ({ addToList }) => {
-  let [author, setAuthor] = useState('');
-  let [title, setTitle] = useState('');
-  let [content, setContent] = useState('');
+const BlogPost = ({ addToList, title, setTitle, author, setAuthor, content, setContent }) => {
+  // let [author, setAuthor] = useState('');
+  // let [title, setTitle] = useState('');
+  // let [content, setContent] = useState('');
+
+  // set state in Blog.jsx instead
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,15 +18,15 @@ const BlogPost = ({ addToList }) => {
   }
 
   // Define the addUserInput callback function
-  function addUserInput() {
-    console.log('User input added!');
-  }
+  // function addUserInput() {
+  //   console.log('User input added!');
+  // }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
         {/* Pass the addUserInput callback function as a prop */}
-        <UserInput
+        {/* <UserInput
           title={title}
           author={author}
           content={content}
@@ -32,7 +34,7 @@ const BlogPost = ({ addToList }) => {
           setTitle={setTitle}
           setContent={setContent}
           addUserInput={addUserInput} // Pass the callback function to the UserInput component
-        />
+        /> */}
         <button>Submit Post</button>
       </form>
     </>

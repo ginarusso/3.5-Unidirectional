@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import BlogPost from './BlogPost'
-// import UserInput from './UserInput'
+import UserInput from './UserInput'
 
 const Blog = () => {
+
+    // setting author, title, content in the blog
+
+    let [author, setAuthor] = useState('');
+    let [title, setTitle] = useState('');
+    let [content, setContent] = useState('');
     
     let [listOfPosts, setListOfPosts] = useState([])
 
@@ -25,9 +31,24 @@ const Blog = () => {
     Optional TODO: Delete the last post from the listOfPosts
     Optional TODO: Add dates to the posts
     */}
+{/* send the title, author, content, etc. down to the UserInput */}
+    <UserInput
+          title={title}
+          author={author}
+          content={content}
+          setAuthor={setAuthor}
+          setTitle={setTitle}
+          setContent={setContent}
+        />
 
-   {/* <UserInput /> */}
-    <BlogPost addToList={addToList}/>  
+        {/* after state is set from the values from UserInput, take the title, author, content and sending it to BlogPost.jsx to create the post */}
+    <BlogPost addToList={addToList}
+          title={title}
+          author={author}
+          content={content}
+          setAuthor={setAuthor}
+          setTitle={setTitle}
+          setContent={setContent}/>   
 
     {listOfPosts.map(post =>{
         return (
